@@ -1,9 +1,13 @@
 # SQL
 
 Learning SQL.
-Why do so many companies require SQL.
 
-Why can't we all just use Microsoft Excel.
+Why do so many companies require SQL?
+
+Why can't we all just use Microsoft Excel?
+
+In what scenario/case is SQL useful?
+
 Apparently SQL databases can handle a LOT more data, faster and more efficiently than Excel can.
 
 Good for speed, and big data. but might be hard for common folk to learn how to get data from these SQL databases.
