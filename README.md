@@ -37,7 +37,8 @@ Predefined datatypes in SQL
 - XML (information wrapped in eXtensible Markup Language tags - kinda like HTML - bit harder to read than JSON, but can do a lot more?)
 - JSON (Javascript Object Notation - is a text format for storing/transporting data - easily readable)
 
-##20210721 Queries ain't hard
+
+## 20210721 Queries ain't hard
 "Queries" in sql are requests for data. Although they can do a lot more than that.
 When you create a "query" in Microsoft SQL Server Management Studio, you create a .sql file which can contain SQL commands or statements.
 
