@@ -127,7 +127,7 @@ select * from myemployee a full join MySalary b on a.EmployeeID = B.EmployeeID;
 select * from myemployee cross join MySalary; -- oh this is weird -- don't need to specify the matching column anymore.
 select * from myemployee, MySalary; -- same result as above - seems like CROSS JOIN might be for producing ALL possible COMBINATIONS - for statistics?
 
---------------------------------------------------------------------------------------------
+-------------------------------------------------------MANIPULATING DATES in SQL
 select GETDATE(); -- provides current date
 select GETDATE() - 2; -- provides current date MINUS 2 days
 
@@ -142,5 +142,49 @@ select DATEPART(dd, getdate()) as Day;
 select DATEADD(day, 4, getdate());
 select getdate() + 4; -- same thing
 
+---
+select top 10 * from Production.WorkOrder;
+--interesting you can use column names as variables for the DATEDIFF() function here
+select workOrderID, productid, startdate, enddate, DATEDIFF(day, startdate, enddate) as DateDifference from Production.WorkOrder;
+
+--get the first day of this month
+-- using DATEADD() function, incrementing by days "dd", increment amount = current day of this month + 1, add is to the current date
+select DATEADD(dd, -(DATEPART(day, getdate())) +1, getdate());
+
+------------------------------------------
+
+--------------------------------------- TSQL aggregation and STRING functions
+--AGGREGATE functions:
+select * from MySalary;
+select avg(salary) from MySalary; --AVERAGE
+select count(salary) from MySalary;--COUNT, just like Excel
+select count(*) from MySalary;
+select sum(salary) from MySalary; --SUM
+select min(salary) from MySalary; -- MIN
+select max(salary) from MySalary; -- MAX
+
+-- CONCATENATING strings - ahh more Excel things
+select CONCAT('String 1','string 2'); -- printed as a VALUE within a temporary table? -- i guess select is also kind of VIEW/SHOW
+print concat('Hello',' World!!'); -- PRINTS as a message -- I guess you could make a console app using print. wonder if there's a System.Console.ReadLine()?
+
+--this is a weird one. uses RAND() for random number (float between 0,1)
+select EmployeeID, Salary, CONCAT(employeeID, ' ', RAND()) as ConcatenatedText from MySalary;
+
+--more microsoft Excel functions for strings
+--LEFT, RIGHT, MID?
+print LEFT('12345',2);
+print RIGHT('12345',2);
+--seems like no MID exists.
+print substring('12345',2,5); -- i guess this is the MID equivalent, "SUBSTRING", i think Powershell also uses this function name.
+print 'HELLO WORLD';
+print LOWER('HELLO WORLD'); -- lowercase - very useful - although searching in microsoft SQL seems to be case-insensitive so far.
+print UPPER('hey everybody!');
+print LEN('123456789'); -- LENGTH - same as excel LEN
+print ('    a sentence with lots of spaces     ');
+print LTRIM('    a sentence with lots of spaces     '); -- left trim
+print RTRIM('    a sentence with lots of spaces     '); -- right trim
+print LTRIM(RTRIM('    a sentence with lots of spaces     ')); -- left and right trim
+
+--CRUD = create, read, update, delete.
 
 
