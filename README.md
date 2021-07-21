@@ -25,8 +25,7 @@ My resource for learning will be:
 **Things I've learnt so far:**
 - "--" is how you make notes for a single line
 - "/*"... notes in here ..."/\*" is how you make multi-line notes, just like C#
-- in GitHub having anything between two astericks will italicize text - but you can use an escape character \\ to ignore this "Markdown syntax" https://guides.github.com/features/mastering-markdown/
-- With Markdown syntax you have to add two spaces to the end of the line, to actually make a new line
+
 
 Predefined datatypes in SQL
 - Character (can't store Unicode characters)
