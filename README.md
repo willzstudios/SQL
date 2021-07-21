@@ -1,6 +1,5 @@
 # SQL
 ## 20210720 - Learning SQL
-- Why do so many companies require SQL?
 - What is SQL?
 - Why can't we all just use Microsoft Excel instead of SQL databases?
 - In what scenario/case is SQL useful?
