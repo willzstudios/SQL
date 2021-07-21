@@ -37,6 +37,37 @@ Predefined datatypes in SQL
 - XML (information wrapped in eXtensible Markup Language tags - kinda like HTML - bit harder to read than JSON, but can do a lot more?)
 - JSON (Javascript Object Notation - is a text format for storing/transporting data - easily readable)
 
+##20210721 Queries ain't hard
+"Queries" in sql are requests for data. Although they can do a lot more than that.
+When you create a "query" in Microsoft SQL Server Management Studio, you create a .sql file which can contain SQL commands or statements.
+
+These lines of codes can do a lot more than "querying" for data:
+- they can CREATE databases, database tables, values
+- READ or query database tables for values
+- UPDATE and MODIFY data values/tables
+- DELETE databases, tables, values
+
+Just like filtering for data in Excel tables, you can filter for data in SQL - but you use the SQL language to "query" the database.
+
+To READ/VIEW data from a database:
+- use the SELECT keyword
+- specify the data base you want to USE beforehand
+- specify the table you want to SELECT data from
+- You can do a lot of nifty searches with keywords:
+  - * for ALL
+  - WHERE for conditions
+  - operators such as like, =, <,>, AND, OR
+
+To CREATE data tables:
+- you can use INTO: select col1, col2, col3 into "NewTableName" from "ReferencedTableofCol123"
+- you can use INTO with temp table: select col1, col2, col3 into #tempTableName from "ReferencedTableofCol123"
+- you can use CREATE: create table "NewTableName" (col1name dataType, col2name dataType, col3name, dataType)
+
+To UPDATE data:
+- use UPDATE: update "DataTableName" set col1name = 'newCol1Name'
+
+To DELETE data:
+- use DELETE: delete from "TableName"
 
 
 
