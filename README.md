@@ -70,5 +70,12 @@ To UPDATE data:
 To DELETE data:
 - use DELETE: delete from "TableName"
 
+## 20210722
+How do we create a SQL database on a server and view it on a website?
+
+Installed MySQL/MariaDB on a server.
+used phpMyAdmin to configure the MariaDB SQL database
+Created a fun table: "Programming Languages I know about"
+- now how do I share it on a webpage? html? .ASP? - WorkInProgress
 
 
