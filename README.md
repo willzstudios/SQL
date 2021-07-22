@@ -1,4 +1,4 @@
-# SQL
+# SQL adventure
 ## 20210720 - Learning SQL
 - What is SQL?
 - Why can't we all just use Microsoft Excel instead of SQL databases?
