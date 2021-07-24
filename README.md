@@ -3,7 +3,7 @@
 
 ## 20210725 - Finally made a webpage displaying a HTML table from a MariaDB database using PHP to make SQL connection and query
 What a learning experience and a lot of headache.
-1. When making a connection to your database with PHP it's easier if you use localhost as the server - this means your MySQL/MariaDB database should be on the same server as your webpage/website.
+1. When making a connection to your database with PHP it's easier if you use localhost as the server if nobody is going to remotely connect to it - this means your MySQL/MariaDB database should be on the same server as your webpage/website.
 2. Choose you database column names wisely - weird names such as "Experience/Applications" with the foward-slash symbol will require special syntax when writing a SQL Query - it will require the use of BACKQUOTES for MariaDB SQL database (that's the key to the left of the number 1 on your keyboard).
 3. Debug with phpMyAdmin for SQL queries, or a proper IDE
 4. Debug with errorlog created from running the PHP file on your webserver (cPanel, FileManager for me)
@@ -12,6 +12,7 @@ What a learning experience and a lot of headache.
 
 **This is the result:**
 https://www.willzstudios.com/nonwordpress/MyProgrammingLanguages/connectdisplayDB.php
+- php file attached, renamed db, user, pass, etc.
 
 **Multiple resources were used to figure out this  mini-project**
 - It would've been great if I had found them earlier!
