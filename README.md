@@ -1,4 +1,4 @@
-# SQL adventure
+# SQL adventure - Learning SQL, PHP and HTML in 4 days
 
 
 ## 20210725 - Finally made a webpage displaying a HTML table from a MariaDB database using PHP to make SQL connection and query
