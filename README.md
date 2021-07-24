@@ -102,7 +102,7 @@ What a learning experience.
 4. Debug with errorlog created from running the PHP file on your webserver (cPanel, FileManager for me)
 5. Format HTML properly within your PHP file - makes it a lot easier to read
 
-This is the result:
+**This is the result:**
 https://www.willzstudios.com/nonwordpress/MyProgrammingLanguages/connectdisplayDB.php
 
 Multiple resources were used to figure out this  mini-project
