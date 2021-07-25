@@ -1,7 +1,16 @@
-# SQL adventure - Learning SQL, PHP and HTML in 4 days
+# SQL adventure - Learning SQL, PHP and some HTML, CSS, JS
 
+## 20210725 - Made a sortable HTML table
+This wasn't too bad.
+w3schools already had the answer for me. Just had to adjust it into my .PHP file.  
+Reference from w3schools:  
+https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sort_table_desc  
+Still don't know how it works yet. But will have a look.
 
-## 20210725 - Finally made a webpage displaying a HTML table from a MariaDB database using PHP to make SQL connection and query
+- next steps will be how to sort the table for integers
+- and how to make custom sorting for my old enums, which have become string (Expertise: expert, proficient, intermediate, basic, forgotten, none)
+
+## 20210724 - Finally made a webpage displaying a HTML table from a MariaDB database using PHP to make SQL connection and query
 What a learning experience and a lot of headache.
 1. When making a connection to your database with PHP it's easier if you use localhost as the server if nobody is going to remotely connect to it - this means your MySQL/MariaDB database should be on the same server as your webpage/website.
 2. Choose you database column names wisely - weird names such as "Experience/Applications" with the foward-slash symbol will require special syntax when writing a SQL Query - it will require the use of BACKQUOTES for MariaDB SQL database (that's the key to the left of the number 1 on your keyboard).
@@ -19,7 +28,7 @@ https://www.willzstudios.com/nonwordpress/MyProgrammingLanguages/connectdisplayD
 - w3schools was a great help
 - https://www.w3schools.com/php/php_mysql_intro.asp
 - https://www.w3schools.com/php/php_mysql_select.asp
-- - https://tryphp.w3schools.com/showphpfile.php?filename=demo_db_select_oo_table
+- https://tryphp.w3schools.com/showphpfile.php?filename=demo_db_select_oo_table
 - reading through SQL, HTML and PHP through w3schools was also great to understand what was going on in the example codes
 
 ## 20210724
