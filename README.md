@@ -3,6 +3,15 @@
 WIP, Fruits of my labour:   
 https://www.willzstudios.com/nonwordpress/MyProgrammingLanguages/connectdisplayDB.php
 
+## 20210726 - CSS is kinda fun and not hard at all!  
+Useful site for escaping strings from HTML:
+https://www.freeformatter.com/html-escape.html#ad-output
+
+There's so many neat functions in CSS for editing the style of a webpage   
+- not much low level programming required - it's all built for you to use!  
+- this is one of my favs: "tr:hover {background-color: #F0F8FF};" - it changes the background colour of the HTML table row you're hovering over! 
+- you can change fonts with "font-family: Helvetica, Arial, sans-serif;"  
+
 ## 20210725 - Made a sortable HTML table
 This wasn't too bad.
 w3schools already had the answer for me. Just had to adjust it into my .PHP file.  
