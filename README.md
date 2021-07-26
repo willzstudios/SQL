@@ -1,5 +1,8 @@
 # SQL adventure - Learning SQL, PHP and some HTML, CSS, JS
 
+WIP, Fruits of my labour:   
+https://www.willzstudios.com/nonwordpress/MyProgrammingLanguages/connectdisplayDB.php
+
 ## 20210725 - Made a sortable HTML table
 This wasn't too bad.
 w3schools already had the answer for me. Just had to adjust it into my .PHP file.  
@@ -19,9 +22,6 @@ What a learning experience and a lot of headache.
 5. Format HTML properly within your PHP file - makes it a lot easier to read
 6. Make sure to name your columns correctly in PHP code, and instead of using cPanel's FileManager to edit the PHP file, use a proper IDE!
 
-**This is the result:**
-https://www.willzstudios.com/nonwordpress/MyProgrammingLanguages/connectdisplayDB.php
-- php file attached, renamed db, user, pass, etc.
 
 **Multiple resources were used to figure out this  mini-project**
 - It would've been great if I had found them earlier!
