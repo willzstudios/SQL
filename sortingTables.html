@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<!--all HTML docs must start with this declaration! you need this for this .PHP as we're running HTML at the start to make the webpage all-in-one, i wonder if you can split up the code files to make it neater-->
+<html>
+<!-- this html tag represents the root?start? of the html doc, and whatever is within the start and closing tag are HTML elements-->
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <!-- the head tag contains metadata about the HTML doc. ok-->
+    <style>
+        /* this is CSS syntax for notes/comments */
+        body {
+            vertical-align: middle;
+        }
+
+        table {
+            font-family: Helvetica, Arial, sans-serif; /*wow yeh that looks better!*/
+            /*so it seems like you can name a few fonts, and it will try see if the browser has any of those fonts in the order listed, so the other fonts are fallbacks*/
+            border-collapse: collapse;
+            width: 100%;
+            border: 2px solid #000000;
+        }
+
+        p.p1 {
+            font-family: "Lucida Console", "Courier New", monospace;
+            text-align: center;
+        }
+
+
+
+        th, td /*styling the header (TH), and the data (TD)*/ {
+            text-align: left;
+            padding: 12px;
+        }
+
+        td /*styling the data (TD) only*/ {
+            border: 1px solid #ddd;
+        }
+
+        th {
+            border-left: 1px solid #FFFAF0;
+            /*font-weight: normal;*/
+            cursor: pointer;
+            background-color: #E6E6FA;
+            color: #0D1821;
+            border-bottom: 2px solid #000000;
+        }
+
+        tr:nth-child(even) /*even rows should have this colour*/ {
+            background-color: #f2f2f2
+        }
+
+        tr:hover {
+            background-color: #F0F8FF; /*changes color of the row you're hovering over - wow this is REALLY cool!*/
+        }
+        /*hmm this doesnt work at all */
+
+
+    </style>
+</head>
+<body>
+
+    <!-- adding this bit to make the table clicka switch sortable -->
+    <p style="text-align:center;font-size:40px;"><strong>Willz experimental table using PHP, SQL, HTML, CSS, JavaScript</strong></p>
+    <p class="p1">PHP used to connect to MariaDB using mysqli()</p>
+    <p class="p1">SQL used to make queries for data from our MariaDB database's table </p>
+    <p class="p1">HTML used to format the structure of this webpage</p>
+    <p class="p1">CSS used to &lt;style&gt; this webpage</p> <!--those are some crazy specific escape keys-->
+    <p class="p1">JavaScript used to &lt;script&gt; a sorting function for this HTML table</p>
+    <br> <!-- br is to make a new line cool. why are notes sent to browsers as well? -->
+    <table id="myTable">
+        <!-- adding this bit to make the table clicka switch sortable -->
+
+        <tr>
+            <th onclick="sortTable(0)">Programming/Markup Language</th>
+            <th onclick="sortExpertiseTable(1)">Expertise</th>
+            <th onclick="sortTable(2)">Date Started Learning</th>
+            <th onclick="sortNumberTable(3)">Interest</th>
+            <th onclick="sortTable(4)">Project Experience/Applications</th>
+        </tr>
+        <tr><td>SQL</td><td>basic</td><td>2021-07-19</td><td>6</td><td>MariaDB setup on server with phpMyAdmin </td></tr>
+        <tr><td>VBA</td><td>intermediate</td><td>2021-01-01</td><td>5</td><td>GUI program automation in Excel, Outlook</td></tr>
+        <tr><td>C#</td><td>proficient</td><td>2020-01-01</td><td>10</td><td>Unity games (mobile/pc/web), .NET Console app</td></tr>
+        <tr><td>PowerShell</td><td>intermediate</td><td>2019-04-01</td><td>5</td><td>String manipulation, File renaming</td></tr>
+        <tr><td>Python</td><td>basic</td><td>2020-07-01</td><td>6</td><td>Modified other peoples' OCR code for own use</td></tr>
+        <tr><td>MATLAB</td><td>forgotten</td><td>2012-01-01</td><td>0</td><td>Tic-tac-toe game</td></tr>
+        <tr><td>HTML</td><td>basic</td><td>2015-06-01</td><td>5</td><td>Made an extremely basic website</td></tr>
+        <tr><td>CSS</td><td>basic</td><td>2021-07-26</td><td>6</td><td>currently editing my website style</td></tr>
+        <tr><td>Java</td><td>none</td><td></td><td>5</td><td></td></tr>
+        <tr><td>Javascript</td><td>none</td><td>2021-07-25</td><td>4</td><td>know very little, still learning functions for sorting HTML tables</td></tr>
+        <tr><td>C/C++</td><td>none</td><td></td><td>7</td><td></td></tr>
+        <tr><td>PHP</td><td>basic</td><td>2021-07-24</td><td>7</td><td>Used PHP to connect to MySQL database, make a query and display a HTML table from the query</td></tr>
+        <tr><td>Perl</td><td>none</td><td></td><td>1</td><td></td></tr>
+    </table>
+    <!-- trying some JavaSript for Sorting HTML table, woah this is a very specific format.. -->
+    <script>
+    //using JavaScript
+        function sortTable(n) //creating a JavaScript function/method. up above in the echoed HTML we've called this function with parameters 0 and 1. for us we need up to 4,5?
+        {
+            //i don't get why we don't bother declaring variable types here:
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById("myTable");
+            switching = true; //bool switching = True;
+            //Set the sorting direction to ascending:
+            dir = "asc"; //string dir = "asc"
+            /*Make a loop that will continue until
+            no switching has been done:*/
+            while (switching) {
+                //start by saying: no switching is done:
+                switching = false; //bool switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                    //start by saying there should be no switching:
+                    shouldSwitch = false; //bool shouldSwitch = false;
+                    /*Get the two elements you want to compare,
+                    one from current row and one from the next:*/
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+                    /*check if the two rows should switch place,
+                    based on the direction, asc or desc:*/
+                    if (dir == "asc") {
+
+                        //interesting string/text comparison here?
+                        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                            //if so, mark as a switch and break the loop:
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                    else if (dir == "desc") {
+                        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                            //if so, mark as a switch and break the loop:
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+                    /*If a switch has been marked, make the switch
+                    and mark that a switch has been done:*/
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    //Each time a switch is done, increase this count by 1:
+                    switchcount++;
+                } else {
+                    /*If no switching has been done AND the direction is "asc",
+                    set the direction to "desc" and run the while loop again.*/
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc"; //string dir = "desc"
+                        switching = true;
+                    }
+                }
+            }
+        }
+        //second function to sortable by Number:
+        function sortNumberTable(n) {
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById("myTable");
+            switching = true;
+            dir = "asc"; 
+            while (switching) {
+                //start by saying: no switching is done:
+                switching = false; 
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                    //start by saying there should be no switching:
+                    shouldSwitch = false; 
+                    /*Get the two elements you want to compare,
+                    one from current row and one from the next:*/
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+                    /*check if the two rows should switch place,
+                    based on the direction, asc or desc:*/
+                    if (dir == "asc") {
+                        if (Number(x.innerHTML) > Number(y.innerHTML)) {
+                            //if so, mark as a switch and break the loop:
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                    else if (dir == "desc") {
+                        if (Number(x.innerHTML) < Number(y.innerHTML)) {
+                            //if so, mark as a switch and break the loop:
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+                    /*If a switch has been marked, make the switch
+                    and mark that a switch has been done:*/
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    //Each time a switch is done, increase this count by 1:
+                    switchcount++;
+                } else {
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc"; 
+                        switching = true;
+                    }
+                }
+            }
+        }
+        //simple function converting Expertise string to their equivalent Integers to be sorted
+        function ExpertiseToInt(a)
+        {
+            if (a == "none") { return 0; }
+            if (a == "forgotten") { return 1; }
+            if (a == "basic") { return 2; }
+            if (a == "intermediate") { return 3; }
+            if (a == "proficient") { return 4; }
+            if (a == "expert") { return 5; }
+        }
+        //function to sort Expertise values
+        function sortExpertiseTable(n) {
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+            table = document.getElementById("myTable");
+            switching = true;
+            dir = "asc";
+            while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                    //start by saying there should be no switching:
+                    shouldSwitch = false;
+                    /*Get the two elements you want to compare,
+                    one from current row and one from the next:*/
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+                    /*check if the two rows should switch place,
+                    based on the direction, asc or desc:*/
+                    if (dir == "asc") {
+                        if (ExpertiseToInt(x.innerHTML) > ExpertiseToInt(y.innerHTML)) {
+                            //if so, mark as a switch and break the loop:
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                    else if (dir == "desc") {
+                        if (ExpertiseToInt(x.innerHTML) < ExpertiseToInt(y.innerHTML)) {
+                            //if so, mark as a switch and break the loop:
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+                    /*If a switch has been marked, make the switch
+                    and mark that a switch has been done:*/
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    //Each time a switch is done, increase this count by 1:
+                    switchcount++;
+                } else {
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
+                    }
+                }
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>
